@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SGCM - Profissioais</title>
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    </head>
+    <body>
+        <header>
+            <div id="logo" >
+                <img src="imagens/logo.png" alt="Logo SGMC">
+                <span id="titulo">SGCM</span> 
+            </div>
+            <div id="usuarioInfo">
+                <span>Usuário: Administrador (admim)</span>
+                <span>Papel: ADMIN</span>
+            </div>
+            <a href="javascript:void(0)">Logout</a>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="agenda.html">Agenda</a></li>
+                <li><a href="atendimento.html">Atendimento</a></li>
+                <li><a href="paciente.html">Paciente</a></li>
+                <li><a href="profissioais.html">Profissionais</a></li>
+                <li><a href="unidades.hmtl">Unidades</a></li>
+                <li><a href="especialidades.html">Especialidades</a></li>
+                <li><a href="convenios.html">Convênios</a></li>
+                <li><a href="usuarios.html">Usuários</a></li>
+            </ul>
+        </nav>
+        <main>
+            <form action="#">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" required placeholder="Digite aqui seu nome">
+
+                <label for="registroConselho">Registro</label>
+                <input type="text" name="registroConselho" id="registroConselho" placeholder="Digite o registo do conselho">
+
+                <label for="telefone">Telefone</label>
+                <input type="text" name="telefone" id="telefone" placeholder="Digite o seu telefone">
+
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="Digite o seu email">
+
+                <label for="especialidade">Especialidade</label>
+                <select name="especialidade" id="especialidade" required>
+                    <option value="1"></option>
+                    <option value="2">Especialidade A</option>
+                    <option value="3">Especialidade B</option>
+                    <option value="4">Especialidade C</option>
+                </select>
+
+                <label for="unidade">Unidade</label>
+                <select name="unidade" id="unidade" required>
+                    <option value="1"></option>
+                    <option value="2">Unidade A</option>
+                    <option value="3">Unidade B</option>
+                    <option value="4">Unidade C</option>
+                </select>
+
+                <input type="button" value="Cancelar">
+                <input type="submit" value="Salvar">
+               
+            </form>
+        <!--Ement: table>thead+tbody+tfoot-->
+            <table>
+                <thead>
+                    <!--Ement: tr>th*8-->
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Registro</th>
+                        <th>Especialidade</th>
+                        <th>Unidade</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Ement: tr*5>td{$}+td{x}*6+td>a[href="javascript:void(0)"]{Editar}+a[href="javascript:void(0)"]{Excluir}-->
+                    <tr>
+                        <td>1</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>
+                            <a href="javascript:void(0)">Editar</a>
+                            <a href="javascript:void(0)">Excluir</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>
+                            <a href="javascript:void(0)">Editar</a>
+                            <a href="javascript:void(0)">Excluir</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>
+                            <a href="javascript:void(0)">Editar</a>
+                            <a href="javascript:void(0)">Excluir</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>
+                            <a href="javascript:void(0)">Editar</a>
+                            <a href="javascript:void(0)">Excluir</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>
+                            <a href="javascript:void(0)">Editar</a>
+                            <a href="javascript:void(0)">Excluir</a>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="8">Total de registro: 5</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </main>
+        <footer>
+            <span>SGMC - Sisema de Gerenciamento de Clínica Médica</span>
+            <span>Suporte técnico: (68) 5555-5555 | <a href="mailto:suporte.sgcm@ufac.br">suporte.sgcm@ufac.br</a></span>
+        </footer>
+    </body>
+</html>
