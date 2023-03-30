@@ -1,0 +1,84 @@
+/*Body*/
+/*Retirando a margem padão do navegador e colocando uma fonte padrão*/
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*Header*/
+header {
+    background-image: linear-gradient(#003366, #006699) ;
+}
+
+
+/*Footer*/
+footer {
+    background-color: #003366;
+
+}
+
+
+header, footer {
+    color: #ffffff;
+}
+
+div#logo span {
+    font-size: 2em;
+    font-weight: bold;
+
+}
+/*Main*/
+/*Alterando a propriedade da margen interna*/
+/*em -> representa a proporção do elemento que ela é aplicada em relação ao tamanho da fonte do elem. pai*/
+/*1em = 16px*/
+main{
+    padding: 1em;
+    background-image: linear-gradient(#cccccc, #ffffff);
+}
+
+/*Links e botões*/
+a.botao, 
+input[type="button"],
+input[type="submit"]{
+    background-color: #2c832d;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+a.botao:hover, 
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    background-color: #1e5e20;
+}
+
+input, select, a.botao {
+    font-size: 1em;
+}
+
+input[type="button"],
+input[type="submit"] {
+    height: 2em;
+}
+
+/* Alterando um link e deixando parecido com um botão*/
+a.botao {
+    text-decoration: none;
+    display: inline-block;
+    line-height: 2em;
+    padding: 0 0.4em;
+}
+
+a.botao.excluir {
+    background-color: #c42626;
+}
+
+a.botao.excluir:hover {
+    background-color: #811b1b;
+}
+
+
+/*Formulários*/
+/*Alterar a propriedade content para :*/
+form label::after {
+    content: ":";
+}
