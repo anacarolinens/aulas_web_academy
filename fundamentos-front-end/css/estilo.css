@@ -1,37 +1,34 @@
-/*Body*/
-/*Retirando a margem padão do navegador e colocando uma fonte padrão*/
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    height: 100vh;/*ocupar 100% do espaço vertical*/
+    height: 100vh;
 }
-/*Header*/
+
+/* Header e Footer */
+
 header {
     background-image: linear-gradient(#003366, #006699);
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap
-
+    flex-wrap: wrap;
 }
 
-
-/*Footer*/
 footer {
     background-color: #003366;
     margin-top: auto;
-
 }
-
 
 header, footer {
-    color: #ffffff;
+    color: white;
     padding: 0.5em;
 }
-footer a{
+
+footer a {
     color: inherit;
 }
+
 div#logo {
     margin: auto 0;
 }
@@ -41,11 +38,9 @@ div#logo * {
     margin-left: 0.5em;
 }
 
-
 div#logo span {
     font-size: 2em;
     font-weight: bold;
-
 }
 
 div#usuarioInfo a.botao {
@@ -56,30 +51,29 @@ div#usuarioInfo {
     text-align: right;
 }
 
-div#usuarioInfo span, footer span{
+div#usuarioInfo span, footer span {
     display: block;
     margin-bottom: 0.5em;
 }
 
-@media screen and (max-width:450px) {
+@media screen and (max-width: 450px) {
+
     div#usuarioInfo {
         margin-top: 1em;
         text-align: left;
     }
+
 }
 
+/* Main */
 
-
-/*Main*/
-/*Alterando a propriedade da margen interna*/
-/*em -> representa a proporção do elemento que ela é aplicada em relação ao tamanho da fonte do elem. pai*/
-/*1em = 16px*/
-main{
+main {
     padding: 1em;
     background-image: linear-gradient(#cccccc, #ffffff);
 }
 
-/*Nav*/
+/* NAV */
+
 nav {
     background-color: #383838;
     border-top: 1px solid white;
@@ -90,14 +84,15 @@ nav ul {
     margin: 0;
     padding: 0;
 }
+
 nav ul li a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     padding: 1em;
     display: inline-block;
 }
 
-nav ul li:hover {
+nav ul li a:hover {
     background-color: #cccccc;
     color: #383838;
 }
@@ -105,54 +100,59 @@ nav ul li:hover {
 nav ul li {
     display: inline-block;
 }
-
- nav div#dropdown_menu {
+nav div#dropdown_menu {
     display: none;
     position: absolute;
     background-color: #383838;
-    border: 1px solid #ffffff;
-    box-shadow: 0px 2px 4px #000000;
- }
+    border: 1px solid white;
+    box-shadow: 0px 2px 4px black;
+}
 
- nav div#dropdown_menu a {
+nav div#dropdown_menu a {
     display: block;
- }
+}
 
- /*verificaro que faltou copiar*/
- nav ul li#dropdown:hover div#dropdown_menu {
+nav ul li#dropdown:hover div#dropdown_menu {
     display: block;
- }
+}
+ @media screen and (max-width: 720px) {
 
- @media screen and (max-width: 720px){
     nav ul li {
         display: block;
         width: 100%;
     }
 
     nav ul li a {
-        width: 100%
+        width: 100%;
     }
+    
  }
 
-/*Comandos*/
+/* Comandos */
+
 div#comandos {
     display: flex;
     justify-content: space-between;
     padding: 0.5em 0.1em;
 }
 
-div
+div#comandos a {
+    margin: auto 0;
+}
 
-/*Links e botões*/
-a.botao, input[type="button"],input[type="submit"]{
+/* Links e botões */
+
+a.botao,
+input[type="button"],
+input[type="submit"] {
     background-color: #2c832d;
-    color: #ffffff;
+    color: white;
     border-radius: 4px;
     cursor: pointer;
     border: none;
 }
 
-a.botao:hover, 
+a.botao:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover {
     background-color: #1e5e20;
@@ -167,7 +167,6 @@ input[type="submit"] {
     height: 2em;
 }
 
-/* Alterando um link e deixando parecido com um botão*/
 a.botao {
     text-decoration: none;
     display: inline-block;
@@ -183,8 +182,7 @@ a.botao.excluir:hover {
     background-color: #811b1b;
 }
 
-
-/*Formulários*/
+/* Formulário */
 
 form {
     margin: auto;
@@ -200,7 +198,6 @@ form div.grid {
     align-items: center;
 }
 
-/*Alterar a propriedade content para :*/
 form label::after {
     content: ":";
 }
@@ -209,19 +206,21 @@ input, select {
     height: 2em;
     border: 1px solid #757575;
     border-radius: 5px;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
-form div.grid input, form div.grid select {
+form div.grid input,
+form div.grid select {
     width: 18em;
 }
 
-
-input:required:invalid, select:required:invalid{
-    border: 1px solid red;
+input:invalid,
+select:invalid {
+    border:1px solid red;
 }
 
 @media screen and (max-width: 720px) {
+
     form div.grid {
         grid-template-columns: 1fr;
     }
@@ -231,18 +230,20 @@ input:required:invalid, select:required:invalid{
         width: 90%;
     }
 
-    form div.grid input, form div.grid select {
+    form div.grid input,
+    form div.grid select {
         width: 100%;
     }
+
 }
 
-/*Tabela*/
+/* Tabela */
 
 table {
     width: 100%;
     border-spacing: 0.1em;
     margin: 0.5em auto;
-    /*Responsivo*/
+    /* Responsivo */
     display: block;
     overflow-x: auto;
 }
@@ -254,14 +255,13 @@ table th {
 
 table td, table th {
     padding: 0.5em;
-
 }
 
-table tbody tr:nth-child(odd){
+table tbody tr:nth-child(odd) {
     background-color: #c6d4e2;
 }
 
-table tbody tr:nth-child(even){
+table tbody tr:nth-child(even) {
     background-color: #e7ecf1;
 }
 
@@ -270,7 +270,7 @@ table tbody tr:hover {
 }
 
 table tfoot td {
-    border-top: 1px solid #003636;
+    border-top: 1px solid #003366;
     text-align: center;
 }
 
@@ -281,15 +281,16 @@ table tbody td:last-child, table tbody td.fit {
 }
 
 @media print {
+
     table th {
-        color: #000000;
+        color: black;
     }
 
     table th, table td {
-        border: 1px solid #000000;
+        border: 1px solid black;
     }
 
-    header, nav div#comandos {
+    header, nav, div#comandos {
         display: none;
     }
-}
+
