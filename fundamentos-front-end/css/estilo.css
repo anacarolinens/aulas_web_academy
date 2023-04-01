@@ -60,6 +60,16 @@ div#usuarioInfo span, footer span{
     margin-bottom: 0.5em;
 }
 
+@media screen and (max-width:450px) {
+    div#usuarioInfo {
+        margin-top: 1em;
+        text-align: left;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+    }
+}
+
 
 
 /*Main*/
@@ -72,6 +82,64 @@ main{
 }
 
 /*Nav*/
+nav {
+    background-color: #383838;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1em;
+    display: inline-block;
+}
+
+nav ul li:hover {
+    background-color: #cccccc;
+    color: #383838;
+}
+
+ nav div#dropdown_menu {
+    display: none;
+    position: absolute;
+    background-color: #383838;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 2px 4px #000000;
+ }
+
+ nav div#dropdown_menu a {
+    display: block;
+ }
+
+ /*verificaro que faltou copiar*/
+ nav ul li#dropdown:hover div#dropdown_menu {
+    display: block;
+    justify-content: space-between;
+    padding: 0.5em 0.1em;
+ }
+
+ @media screen and (max-width: 720px){
+    nav ul li {
+        display: block;
+        width: 100%;
+    }
+
+    nav ul li a {
+        width: 100%
+    }
+ }
+
+
+/*mesmo efeito acima*/
+/*nav li {
+    display: flex;
+}*/
+
 nav ul li {
     display: inline-block;
 }
@@ -82,6 +150,7 @@ nav ul li {
 div#comandos {
     display: flex;
     justify-content: space-between;
+    padding: 0.5em 0.1em;
 }
 
 /*Links e botões*/
@@ -158,11 +227,24 @@ form div.grid input, form div.grid select {
 }
 
 
-
 input:required:invalid, select:required:invalid{
     border: 1px solid red;
 }
 
+@media screen and (max-width: 720px) {
+    form div.grid {
+        grid-template-columns: 1fr;
+    }
+
+    form#formCadastro {
+        text-align: left;
+        width: 90%;
+    }
+
+    form div.grid input, form div.grid select {
+        width: 100%;
+    }
+}
 
 /*Tabela*/
 
@@ -170,6 +252,9 @@ table {
     width: 100%;
     border-spacing: 0.1em;
     margin: 0.5em auto;
+    /*Responsivo*/
+    display: block;
+    overflow-x: auto;
 }
 
 table th {
@@ -203,4 +288,18 @@ table tbody td:last-child, table tbody td.fit {
     text-align: center;
     width: 1%;
     white-space: nowrap;
+}
+
+@media print {
+    table th {
+        color: #000000;
+    }
+
+    table th, table td {
+        border: 1px solid #000000;
+    }
+
+    header, nav div#comandos {
+        display: none;
+    }
 }

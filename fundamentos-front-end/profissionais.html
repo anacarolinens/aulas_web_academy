@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
         <title>SGCM - Profissioais</title>
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
     </head>
@@ -22,14 +23,19 @@
                 <li><a href="atendimento.html">Atendimento</a></li>
                 <li><a href="paciente.html">Pacientes</a></li>
                 <li><a href="profissioais.html">Profissionais</a></li>
-                <li><a href="unidades.hmtl">Unidades</a></li>
-                <li><a href="especialidades.html">Especialidades</a></li>
                 <li><a href="convenios.html">Convênios</a></li>
-                <li><a href="usuarios.html">Usuários</a></li>
+                <li id="dropdown">
+                    <a href="jascript:void(0)">Configurações <span>&#9660;</span></a>
+                    <div id="dropdown_menu">
+                        <a href="unidades.hmtl">Unidades</a>
+                        <a href="especialidades.html">Especialidades</a>
+                        <a href="usuarios.html">Usuários</a>
+                    </div>
+                </li>
             </ul>
         </nav>
         <main>
-            <form action="#">
+            <form action="#" id="formCadastro">
 
                 <div class="grid">
 
