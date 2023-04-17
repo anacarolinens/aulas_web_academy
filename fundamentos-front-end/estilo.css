@@ -217,6 +217,10 @@ form {
     text-align: right;
 }
 
+form.inativo {
+    display: none;
+}
+
 form div.grid {
     display: grid;
     grid-template-columns: max-content max-content;
