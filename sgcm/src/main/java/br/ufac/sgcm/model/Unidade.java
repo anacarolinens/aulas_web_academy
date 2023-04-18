@@ -21,10 +21,10 @@ public class Unidade implements Serializable{
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getEndereço() {
+    public String getEnderco() {
         return endereço;
     }
-    public void setEndereço(String endereço) {
+    public void setEndereco(String endereço) {
         this.endereço = endereço;
     }
 

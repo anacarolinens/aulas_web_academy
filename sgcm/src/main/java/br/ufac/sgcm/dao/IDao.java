@@ -10,7 +10,7 @@ public interface IDao<T> { //<T> - tipo genérico
     List<T> get(String termoBusca);
     int insert(T objeto);
     int update(T objeto);
-    int delete(T objeto);
+    int delete(Long id);
 
 
 }
