@@ -32,7 +32,6 @@ public class ProfissionalDao implements IDao<Profissional> {
         try {
             ps = conexao.prepareStatement(sql);
             rs = ps.executeQuery();
-            //cria o objeto e representa no banco de dados
             while (rs.next()) {
                 Profissional registro = new Profissional();
                 registro.setId(rs.getLong("id"));
@@ -43,7 +42,6 @@ public class ProfissionalDao implements IDao<Profissional> {
                 registro.setEspecialidade(especialidadeDao.get(rs.getLong("especialidade_id")));
                 registro.setUnidade(unidadeDao.get(rs.getLong("unidade_id")));
                 registros.add(registro);
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -55,11 +53,11 @@ public class ProfissionalDao implements IDao<Profissional> {
     public Profissional get(Long id) {
         Profissional registro = new Profissional();
         String sql = "SELECT * FROM profissional WHERE id = ?";
-        try{
+        try {
             ps = conexao.prepareStatement(sql);
             ps.setLong(1, id);
             rs = ps.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
                 registro.setId(rs.getLong("id"));
                 registro.setNome(rs.getString("nome"));
                 registro.setEmail(rs.getString("email"));
@@ -67,22 +65,26 @@ public class ProfissionalDao implements IDao<Profissional> {
                 registro.setRegistroConselho(rs.getString("registro_conselho"));
                 registro.setEspecialidade(especialidadeDao.get(rs.getLong("especialidade_id")));
                 registro.setUnidade(unidadeDao.get(rs.getLong("unidade_id")));
-
             }
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return registro;
     }
 
-    
     @Override
     public List<Profissional> get(String termoBusca) {
-       List<Profissional> registros = new ArrayList<>();
-        String sql = "SELECT p.*, e.nome AS especialidades, u.nome AS unidade FROM profissional p"
-        + "LEFT JOIN especialidade e ON p.especialidade_id = e.id "
-        + "LEFT JOIN unidade u ON p.unidade_id = u.id"
-        + "WHERE p.nome LIKE ? OR registro_conselho LIKE ? OR telefone LIKE ? OR email LIKE ? OR e.nome LIKE ? OR u.nome LIKE ?";
+        List<Profissional> registros = new ArrayList<>();
+        String sql = "SELECT p.*, e.nome AS especialidade, u.nome AS unidade" +
+            " FROM profissional p" +
+            " LEFT JOIN especialidade e ON p.especialidade_id = e.id" +
+            " LEFT JOIN unidade u ON p.unidade_id = u.id" +
+            " WHERE p.nome LIKE ?" +
+            " OR registro_conselho LIKE ?" +
+            " OR telefone LIKE ?" +
+            " OR email LIKE ?" +
+            " OR e.nome LIKE ?" +
+            " OR u.nome LIKE ?";
         try {
             ps = conexao.prepareStatement(sql);
             ps.setString(1, "%" + termoBusca + "%");
@@ -102,9 +104,7 @@ public class ProfissionalDao implements IDao<Profissional> {
                 registro.setEspecialidade(especialidadeDao.get(rs.getLong("especialidade_id")));
                 registro.setUnidade(unidadeDao.get(rs.getLong("unidade_id")));
                 registros.add(registro);
-
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -127,14 +127,20 @@ public class ProfissionalDao implements IDao<Profissional> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return registrosAfetados;
     }
 
     @Override
     public int update(Profissional objeto) {
         int registrosAfetados = 0;
-        String sql = "UPDATE profissional SET nome = ?, registro_conselho = ?, telefone = ?, email = ?, especialidade_id = ?, unidade_id = ? WHERE id = ?";
+        String sql = "UPDATE profissional SET" +
+            " nome = ?," +
+            " registro_conselho = ?," +
+            " telefone = ?," +
+            " email = ?, " +
+            " especialidade_id = ?," +
+            " unidade_id = ?" +
+            " WHERE id = ?";
         try {
             ps = conexao.prepareStatement(sql);
             ps.setString(1, objeto.getNome());
@@ -148,7 +154,6 @@ public class ProfissionalDao implements IDao<Profissional> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return registrosAfetados;
     }
 
@@ -158,7 +163,7 @@ public class ProfissionalDao implements IDao<Profissional> {
         String sql = "DELETE FROM profissional WHERE id = ?";
         try {
             ps = conexao.prepareStatement(sql);
-            ps.setLong(registrosAfetados, ps.executeUpdate());
+            ps.setLong(1, id);
             registrosAfetados = ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -166,5 +171,4 @@ public class ProfissionalDao implements IDao<Profissional> {
         return registrosAfetados;
     }
     
-
 }

@@ -39,11 +39,23 @@ public class PrimeiroServlet extends HttpServlet {
     //     saida.println();
     //     }
 
-    Profissional p = dao.get(1L);
-    saida.println(p.getNome()); //pegando o nome
-    p.setNome("Ana"); //alterando o nome
-    dao.update(p); //Fazendo update
-    saida.println(p.getNome()); //verificando se alterou
+    // Profissional p = dao.get(1L);
+    // saida.println(p.getNome()); //pegando o nome
+    // p.setNome("Ana"); //alterando o nome
+    // dao.update(p); //Fazendo update
+    // p = dao.get(1L);
+    // saida.println(p.getNome()); //verificando se alterou
+
+
+       
+
+    List<Profissional> profissionaisBusca = dao.get("cardiologia");
+    for (Profissional itemProfissional : profissionaisBusca){
+        saida.println(itemProfissional.getNome());
+        saida.println(itemProfissional.getEspecialidade().getNome());
+        saida.println();
+
+    }
 
 
         EspecialidadeDao dao2 = new EspecialidadeDao();
