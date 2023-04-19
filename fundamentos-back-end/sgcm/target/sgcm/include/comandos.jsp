@@ -1,7 +1,6 @@
- <%@ page pageEncoding="UTF-8"%>
-
+<%@ page pageEncoding="UTF-8" %>
             <div id="comandos">
-                <a href="<%=request.getParametro("link")%>"
+                <a href="<%=request.getParameter("link")%>"
                    id="add"
                    class="botao">Adicionar</a>
                 <div>

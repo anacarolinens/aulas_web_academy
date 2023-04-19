@@ -15,7 +15,7 @@ public class ConexaoDB {
 
         String url = "jdbc:mysql://localhost/sgcm";
         String usuario = "root";
-        String senha = "Ana1525132226";
+        String senha = "root";
 
         //Tentativa de conexao na primeira vez que a classe for instanciada
         try {
