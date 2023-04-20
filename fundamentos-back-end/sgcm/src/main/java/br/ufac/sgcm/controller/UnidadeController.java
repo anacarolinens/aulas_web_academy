@@ -5,14 +5,13 @@ import java.util.List;
 import br.ufac.sgcm.dao.UnidadeDao;
 import br.ufac.sgcm.model.Unidade;
 
-public class UnidadeController implements IController{
+public class UnidadeController implements IController<Unidade> {
 
     private UnidadeDao dao;
 
-    public UnidadeController() { //metodo construtor
+    public UnidadeController() {
         dao = new UnidadeDao();
     }
-
 
     @Override
     public List<Unidade> get() {
@@ -20,19 +19,19 @@ public class UnidadeController implements IController{
     }
 
     @Override
-    public Object get(Long id) {
+    public Unidade get(Long id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'get'");
     }
 
     @Override
-    public List get(String termoBusca) {
+    public List<Unidade> get(String termoBusca) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'get'");
     }
 
     @Override
-    public int save(Object objeto) {
+    public int save(Unidade objeto) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'save'");
     }

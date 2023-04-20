@@ -54,7 +54,7 @@
                         <td><%=item.getTelefone()%></td>
                         <td><%=item.getEmail()%></td>
                         <td>
-                            <a href="profissionaisForm.jsp?Id=<%=item.getId()%>"
+                            <a href="profissionaisForm.jsp?id=<%=item.getId()%>"
                                class="botao">Editar</a>
                             <a href="profissionais.jsp?excluir=<%=item.getId()%>"
                                class="botao excluir">Excluir</a>
