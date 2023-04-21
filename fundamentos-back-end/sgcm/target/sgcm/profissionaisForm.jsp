@@ -30,10 +30,10 @@
         item = controllerP.get(id);
     }
 
-    String submit = request.getParameter("submit");
-    if (submit != null) {
+    String submit = request.getParameter("submit"); //verifica se foi enviado
+    if (submit != null) { //verifica se ele não é nulo
 
-        if (paramId != null && !paramId.isEmpty()) {
+        if (paramId != null && !paramId.isEmpty()) { 
             Long id = Long.parseLong(request.getParameter("id"));
             item.setId(id);
         }

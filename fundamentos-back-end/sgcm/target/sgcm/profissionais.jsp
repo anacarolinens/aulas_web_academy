@@ -16,7 +16,13 @@
         controller.delete(id);
     }
 
-    List<Profissional> registros = controller.get();
+    List<Profissional> registros; 
+    String paramBusca = request.getParameter("busca");
+    if (paramBusca != null && !paramBusca.isEmpty()) { //verificando se não é nulo e se não está vazio
+        registros = controller.get(paramBusca);
+    }else {
+        registros = controller.get();
+    }
 
 %>
 

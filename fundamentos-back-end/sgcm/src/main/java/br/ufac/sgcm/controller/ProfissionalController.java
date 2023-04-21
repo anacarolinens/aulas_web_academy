@@ -25,8 +25,7 @@ public class ProfissionalController implements IController<Profissional> {
 
     @Override
     public List<Profissional> get(String termoBusca) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        return dao.get(termoBusca);
     }
 
     @Override
