@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Convenio implements Serializable {
     
     private Long id;
-    private Boolean ativo;
+    private boolean ativo;
     private String cnpj;
     private String email;
     private String nome;
