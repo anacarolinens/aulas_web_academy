@@ -2,25 +2,22 @@ package br.ufac.sgcm.model;
 
 import java.io.Serializable;
 
-public class Especialidade implements Serializable{
-    private Long id;  //atributo privado
-    private String nome; //atributo privado
+public class Especialidade implements Serializable {
 
-
-
-    public Long getId() { //getter
+    private Long id;
+    private String nome;
+    
+    public Long getId() {
         return id;
     }
-    public void setId(Long id) { //setter
+    public void setId(Long id) {
         this.id = id;
     }
-    public String getNome() { //getter
+    public String getNome() {
         return nome;
     }
-    public void setNome(String nome) { //setter
+    public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    
+    }   
     
 }

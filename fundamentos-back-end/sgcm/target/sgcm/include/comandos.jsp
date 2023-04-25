@@ -4,9 +4,11 @@
                    id="add"
                    class="botao">Adicionar</a>
                 <div>
-                    <form action="">
+                    <form method="post">
                         <label for="busca">Busca</label>
-                        <input type="search" name="busca" id="busca">
+                        <input type="search" name="busca" id="busca"
+                            placeholder="Digite para pesquisar...">
+                        <input type="submit" value="Buscar" name="submit">
                     </form>
                 </div>
             </div>

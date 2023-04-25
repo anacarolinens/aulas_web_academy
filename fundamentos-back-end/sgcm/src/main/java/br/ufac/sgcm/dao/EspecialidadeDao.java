@@ -9,7 +9,7 @@ import java.util.List;
 
 import br.ufac.sgcm.model.Especialidade;
 
-public class EspecialidadeDao implements  IDao<Especialidade>{
+public class EspecialidadeDao implements IDao<Especialidade> {
 
     private Connection conexao;
     private PreparedStatement ps;
@@ -19,39 +19,38 @@ public class EspecialidadeDao implements  IDao<Especialidade>{
         conexao = ConexaoDB.getConexao();
     }
 
-
     @Override
     public List<Especialidade> get() {
         List<Especialidade> registros = new ArrayList<>();
         String sql = "SELECT * FROM especialidade";
         try {
             ps = conexao.prepareStatement(sql);
-            rs = ps.executeQuery(sql);
-             while ( rs.next()){
+            rs = ps.executeQuery();
+            while (rs.next()) {
                 Especialidade registro = new Especialidade();
                 registro.setId(rs.getLong("id"));
                 registro.setNome(rs.getString("nome"));
                 registros.add(registro);
             }
-        } catch (SQLException e)  {
+        } catch (SQLException e) {
             e.printStackTrace();
-    }
-        return registros;     
+        }
+        return registros;
     }
 
     @Override
     public Especialidade get(Long id) {
         Especialidade registro = new Especialidade();
         String sql = "SELECT * FROM especialidade WHERE id = ?";
-        try{
+        try {
             ps = conexao.prepareStatement(sql);
             ps.setLong(1, id);
             rs = ps.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
                 registro.setId(rs.getLong("id"));
                 registro.setNome(rs.getString("nome"));
             }
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return registro;

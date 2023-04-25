@@ -10,5 +10,4 @@ public interface IController<T> {
     int save(T objeto);
     int delete(Long id);
     
-    
 }

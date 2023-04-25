@@ -10,13 +10,21 @@
 
 <%
 
+    String pageTitle = "Profissionais";
+
     String paramExcluir = request.getParameter("excluir");
     if (paramExcluir != null) {
         Long id = Long.parseLong(paramExcluir);
         controller.delete(id);
     }
 
-    List<Profissional> registros = controller.get();
+    List<Profissional> registros;
+    String paramBusca = request.getParameter("busca");
+    if (paramBusca != null && !paramBusca.isEmpty()) {
+        registros = controller.get(paramBusca);
+    } else {
+        registros = controller.get();
+    }
 
 %>
 

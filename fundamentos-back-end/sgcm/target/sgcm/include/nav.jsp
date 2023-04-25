@@ -1,4 +1,4 @@
-<%@ page pageEncoding="UTF-8"%>
+<%@ page pageEncoding="UTF-8" %>
         <nav>
             <ul>
                 <li><a href="agenda.jsp">Agenda</a></li>

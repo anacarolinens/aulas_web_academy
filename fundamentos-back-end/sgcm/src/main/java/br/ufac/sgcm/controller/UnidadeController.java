@@ -20,26 +20,28 @@ public class UnidadeController implements IController<Unidade> {
 
     @Override
     public Unidade get(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        return dao.get(id);
     }
 
     @Override
     public List<Unidade> get(String termoBusca) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        return dao.get(termoBusca);
     }
 
     @Override
     public int save(Unidade objeto) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        int registrosAfetados = 0;
+        if (objeto.getId() == null) {
+            registrosAfetados = dao.insert(objeto);            
+        } else {
+            registrosAfetados = dao.update(objeto);
+        }
+        return registrosAfetados;
     }
 
     @Override
     public int delete(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        return dao.delete(id);
     }
     
 }

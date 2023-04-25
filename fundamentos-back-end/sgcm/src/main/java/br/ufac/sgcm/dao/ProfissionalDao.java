@@ -16,9 +16,7 @@ public class ProfissionalDao implements IDao<Profissional> {
     private ResultSet rs;
     private EspecialidadeDao especialidadeDao;
     private UnidadeDao unidadeDao;
-    
 
-    //Buscar a conexao
     public ProfissionalDao() {
         conexao = ConexaoDB.getConexao();
         especialidadeDao = new EspecialidadeDao();

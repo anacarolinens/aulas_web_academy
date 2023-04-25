@@ -2,13 +2,12 @@ package br.ufac.sgcm.model;
 
 import java.io.Serializable;
 
-public class Unidade implements Serializable{
-    //Atibutos privados
+public class Unidade implements Serializable {
+
     private Long id;
     private String nome;
-    private String endereço;
-
-    //Getters e Setters
+    private String endereco;
+    
     public Long getId() {
         return id;
     }
@@ -21,12 +20,11 @@ public class Unidade implements Serializable{
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getEnderco() {
-        return endereço;
+    public String getEndereco() {
+        return endereco;
     }
-    public void setEndereco(String endereço) {
-        this.endereço = endereço;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
-
     
 }

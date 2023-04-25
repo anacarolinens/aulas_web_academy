@@ -24,6 +24,8 @@
 
 <%
 
+    String pageTitle = "Profissionais Formulário";
+
     String paramId = request.getParameter("id");
     if (paramId != null && !paramId.isEmpty()) {
         Long id = Long.parseLong(paramId);
@@ -98,7 +100,9 @@
                                 }
                             }
                     %>
-                    <option value="<%=e.getId()%>" <%=selecionado%>><%=e.getNome()%></option>
+                    <option value="<%=e.getId()%>" <%=selecionado%>>
+                        <%=e.getNome()%>
+                    </option>
                     <% } %>
                 </select>
                 
@@ -114,7 +118,9 @@
                                 }
                             }
                     %>
-                    <option value="<%=u.getId()%>" <%=selecionado%>><%=u.getNome()%></option>
+                    <option value="<%=u.getId()%>" <%=selecionado%>>
+                        <%=u.getNome()%>
+                    </option>
                     <% } %>
                 </select>
 

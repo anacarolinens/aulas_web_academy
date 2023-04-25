@@ -19,15 +19,58 @@ public class UnidadeDao implements IDao<Unidade> {
         conexao = ConexaoDB.getConexao();
     }
 
-
     @Override
     public List<Unidade> get() {
         List<Unidade> registros = new ArrayList<>();
-        String sql = "SELECT * FROM Unidade";
+        String sql = "SELECT * FROM unidade";
         try {
             ps = conexao.prepareStatement(sql);
-            rs = ps.executeQuery(sql);
-            while (rs.next()){
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Unidade registro = new Unidade();
+                registro.setId(rs.getLong("id"));
+                registro.setEndereco(rs.getString("endereco"));
+                registro.setNome(rs.getString("nome"));
+                registros.add(registro);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return registros;
+    }
+
+    @Override
+    public Unidade get(Long id) {
+        Unidade registro = new Unidade();
+        String sql = "SELECT * FROM unidade WHERE id = ?";
+        try {
+            ps = conexao.prepareStatement(sql);
+            ps.setLong(1, id);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                registro.setId(rs.getLong("id"));
+                registro.setNome(rs.getString("nome"));
+                registro.setEndereco(rs.getString("endereco"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return registro;
+    }
+
+    @Override
+    public List<Unidade> get(String termoBusca) {
+        List<Unidade> registros = new ArrayList<>();
+        String sql = "SELECT u.*" +
+            " FROM unidade u" +
+            " WHERE u.nome LIKE ?" +
+            " OR endereco LIKE ?" ;
+        try {
+            ps = conexao.prepareStatement(sql);
+            ps.setString(1, "%" + termoBusca + "%");
+            ps.setString(2, "%" + termoBusca + "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
                 Unidade registro = new Unidade();
                 registro.setId(rs.getLong("id"));
                 registro.setNome(rs.getString("nome"));
@@ -38,49 +81,55 @@ public class UnidadeDao implements IDao<Unidade> {
             e.printStackTrace();
         }
         return registros;
-}
-
-    @Override
-    public Unidade get(Long id) {
-        Unidade registro = new Unidade();
-        String sql = "SELECT * FROM unidade WHERE id = ?";
-        try{
-            ps = conexao.prepareStatement(sql);
-            ps.setLong(1, id);
-            rs = ps.executeQuery();
-            if(rs.next()){
-                registro.setId(rs.getLong("id"));
-                registro.setNome(rs.getString("nome"));
-                registro.setEndereco(rs.getString("endereco"));
-            }
-        } catch (SQLException e){
-            e.printStackTrace();
-        }
-        return registro;
     }
 
-    @Override
-    public List<Unidade> get(String termoBusca) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
-    }
 
     @Override
     public int insert(Unidade objeto) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insert'");
+        int registrosAfetados = 0;
+        String sql = "INSERT INTO unidade (endereco, nome) VALUES (?, ?)";
+        try {
+            ps = conexao.prepareStatement(sql);
+            ps.setString(1, objeto.getEndereco());
+            ps.setString(2, objeto.getNome());
+            registrosAfetados = ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return registrosAfetados;
     }
 
     @Override
     public int update(Unidade objeto) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        int registrosAfetados = 0;
+        String sql = "UPDATE unidade SET" +
+            " endereco = ?," +
+            " nome = ?" +
+            " WHERE id = ?";
+        try {
+            ps = conexao.prepareStatement(sql);
+            ps.setString(1, objeto.getEndereco());
+            ps.setString(2, objeto.getNome());
+            ps.setLong(3, objeto.getId());
+            registrosAfetados = ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return registrosAfetados;
     }
 
     @Override
     public int delete(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        int registrosAfetados = 0;
+        String sql = "DELETE FROM unidade WHERE id = ?";
+        try {
+            ps = conexao.prepareStatement(sql);
+            ps.setLong(1, id);
+            registrosAfetados = ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return registrosAfetados;
     }
     
 }

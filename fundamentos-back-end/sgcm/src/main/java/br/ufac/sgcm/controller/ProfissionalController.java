@@ -20,25 +20,23 @@ public class ProfissionalController implements IController<Profissional> {
 
     @Override
     public Profissional get(Long id) {
-        return dao.get(id); //retorna profissional especifico
+        return dao.get(id);
     }
 
     @Override
     public List<Profissional> get(String termoBusca) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        return dao.get(termoBusca);
     }
 
     @Override
     public int save(Profissional objeto) {
-      int registrosAfetados = 0;
-      if (objeto.getId() == null) {
-        registrosAfetados = dao.insert(objeto);
-      }else {
-        registrosAfetados = dao.update(objeto);
-      }
-      
-      return registrosAfetados;
+        int registrosAfetados = 0;
+        if (objeto.getId() == null) {
+            registrosAfetados = dao.insert(objeto);            
+        } else {
+            registrosAfetados = dao.update(objeto);
+        }
+        return registrosAfetados;
     }
 
     @Override

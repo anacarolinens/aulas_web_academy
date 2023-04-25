@@ -10,7 +10,7 @@ for (let botao of botoesExcluir) {
 
 
 let botaoUrl = document.querySelector("input[data-url]");
-if (botaoUrl) {
+if (botaoUrl){
     botaoUrl.addEventListener("click", () => {
         let url = botaoUrl.getAttribute("data-url");
         window.location.href = url;

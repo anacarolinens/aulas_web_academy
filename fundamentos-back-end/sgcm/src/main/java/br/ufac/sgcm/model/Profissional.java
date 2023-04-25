@@ -2,17 +2,16 @@ package br.ufac.sgcm.model;
 
 import java.io.Serializable;
 
-public class Profissional implements Serializable{
-    //Atributos privados
+public class Profissional implements Serializable {
+
     private Long id;
     private String nome;
     private String email;
     private String registroConselho;
     private String telefone;
-    private Especialidade especialidade; //objeto
+    private Especialidade especialidade;
     private Unidade unidade;
-
-    //Getters e Setters
+    
     public Long getId() {
         return id;
     }

@@ -5,7 +5,7 @@ import java.util.List;
 import br.ufac.sgcm.dao.EspecialidadeDao;
 import br.ufac.sgcm.model.Especialidade;
 
-public class EspecialidadeController implements IController<Especialidade>{
+public class EspecialidadeController implements IController<Especialidade> {
 
     private EspecialidadeDao dao;
 
@@ -13,10 +13,9 @@ public class EspecialidadeController implements IController<Especialidade>{
         dao = new EspecialidadeDao();
     }
 
-
     @Override
     public List<Especialidade> get() {
-       return dao.get();
+        return dao.get();
     }
 
     @Override
