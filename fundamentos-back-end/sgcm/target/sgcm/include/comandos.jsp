@@ -6,7 +6,8 @@
                 <div>
                     <form method="post">
                         <label for="busca">Busca</label>
-                        <input type="search" name="busca" id="busca" placeholder="Digite para pesquisar...">
+                        <input type="search" name="busca" id="busca"
+                            placeholder="Digite para pesquisar...">
                         <input type="submit" value="Buscar" name="submit">
                     </form>
                 </div>
