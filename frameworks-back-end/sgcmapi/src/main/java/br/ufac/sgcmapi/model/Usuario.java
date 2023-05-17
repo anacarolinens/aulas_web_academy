@@ -12,9 +12,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Usuario implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, updatable = false)   
+    @Column(nullable = false, updatable = false)
     private Long id;
 
     private String nomeCompleto;
@@ -31,7 +32,6 @@ public class Usuario implements Serializable {
 
     @Column(nullable = false)
     private boolean ativo = true;
-
 
     public Long getId() {
         return id;

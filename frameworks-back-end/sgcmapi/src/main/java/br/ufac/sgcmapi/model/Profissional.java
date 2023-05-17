@@ -9,13 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-
 @Entity
 public class Profissional implements Serializable {
-
+ 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, updatable = false) 
+    @Column(nullable = false, updatable = false)
     private Long id;
 
     @Column(nullable = false)
@@ -30,13 +29,11 @@ public class Profissional implements Serializable {
     @Column(nullable = false)
     private String telefone;
 
-
     @ManyToOne(optional = false)
     private Especialidade especialidade;
 
     @ManyToOne(optional = false)
     private Unidade unidade;
-    
     
     public Long getId() {
         return id;

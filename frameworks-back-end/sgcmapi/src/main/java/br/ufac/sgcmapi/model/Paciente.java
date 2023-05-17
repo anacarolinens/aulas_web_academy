@@ -16,12 +16,12 @@ public class Paciente implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, updatable = false)    
+    @Column(nullable = false, updatable = false)
     private Long id;
 
     @Column(nullable = false)
     private String nome;
-    
+
     private String email;
 
     @Column(nullable = false)
@@ -30,7 +30,7 @@ public class Paciente implements Serializable {
     @Column(nullable = false)
     private LocalDate dataNascimento;
 
-    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private EGrupoSanguineo grupoSanguineo;
 
     @Column(nullable = false)
@@ -44,7 +44,6 @@ public class Paciente implements Serializable {
     private String cidade;
 
     private String estado;
-
     
     public Long getId() {
         return id;

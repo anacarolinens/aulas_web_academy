@@ -12,16 +12,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-public class Atendimento  implements Serializable{
+//recurso da base de dados para restringir a base de dados
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"data", "hora", "profissional_id"})})
+public class Atendimento implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
     private Long id;
 
     @Column(nullable = false)
-    private LocalDate date;
+    private LocalDate data;
 
     @Column(nullable = false)
     private LocalTime hora;
@@ -37,8 +42,7 @@ public class Atendimento  implements Serializable{
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private EStaus status = EStaus.AGENDADO;
-
+    private EStatus status = EStatus.AGENDADO;
 
     public Long getId() {
         return id;
@@ -46,11 +50,11 @@ public class Atendimento  implements Serializable{
     public void setId(Long id) {
         this.id = id;
     }
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getData() {
+        return data;
     }
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setData(LocalDate data) {
+        this.data = data;
     }
     public LocalTime getHora() {
         return hora;
@@ -76,12 +80,11 @@ public class Atendimento  implements Serializable{
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
-    public EStaus getStatus() {
+    public EStatus getStatus() {
         return status;
     }
-    public void setStatus(EStaus status) {
+    public void setStatus(EStatus status) {
         this.status = status;
-    };
-
+    }
     
 }

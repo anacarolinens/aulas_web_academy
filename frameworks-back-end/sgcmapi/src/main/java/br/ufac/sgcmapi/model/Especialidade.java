@@ -10,6 +10,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Especialidade implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
