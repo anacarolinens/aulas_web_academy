@@ -39,5 +39,20 @@ public class AtendimentoService implements IService<Atendimento> {
         registro.setStatus(EStatus.CANCELADO);
         repo.save(registro);
     }
+
+    public  Atendimento updateStatus(Long id) {
+        Atendimento registro = repo.findById(id).orElse(null);
+        registro.setStatus(registro.getStatus().proximo());
+        repo.save(registro);
+        return registro;
+    }
+
+
+    @Override
+    public List<Atendimento> get(String termoBusca) {
+        return repo.findByAll(termoBusca);
+    }
+
+    
      
 }

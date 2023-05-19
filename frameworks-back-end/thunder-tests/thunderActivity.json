@@ -80,6 +80,20 @@
     "tests": []
   },
   {
+    "_id": "dae439e7-eea4-451a-a1ae-20de44746a62",
+    "colId": "history",
+    "containerId": "",
+    "name": "/atendimento/status/{id}",
+    "url": "http://localhost:9000/atendimento/status/1",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-05-16T17:36:44.312Z",
+    "modified": "2023-05-18T23:53:48.976Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
     "_id": "e9a36cf0-356c-4945-9ee0-aa94e8294ff4",
     "colId": "history",
     "containerId": "",
@@ -98,11 +112,11 @@
     "colId": "history",
     "containerId": "",
     "name": "/atendimento/busca/{termoBusca}",
-    "url": "http://localhost:9000/atendimento/busca/maria",
+    "url": "http://localhost:9000/atendimento/busca/giulia",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-05-16T19:03:35.200Z",
-    "modified": "2023-05-16T19:13:34.776Z",
+    "modified": "2023-05-19T00:49:08.477Z",
     "headers": [],
     "params": [],
     "tests": []

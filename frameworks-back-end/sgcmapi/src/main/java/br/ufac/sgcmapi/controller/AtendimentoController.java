@@ -63,5 +63,19 @@ public class AtendimentoController implements IController<Atendimento> {
         return new ResponseEntity<>(HttpStatus.OK);
         
     }
+
+    
+    @PutMapping("/status/{id}") 
+    public ResponseEntity<Atendimento> updateStatus(@PathVariable ("id") Long id) {
+        Atendimento registro = servico.updateStatus(id);
+        return new ResponseEntity<>(registro, HttpStatus.OK);
+    }
+
+    @Override
+    @GetMapping("/busca/{termoBusca}")
+    public ResponseEntity<List<Atendimento>> get(@PathVariable ("termoBusca") String termoBusca) {
+        List<Atendimento> registros = servico.get(termoBusca);
+        return new ResponseEntity<>(registros, HttpStatus.OK);
+    }
     
 }
