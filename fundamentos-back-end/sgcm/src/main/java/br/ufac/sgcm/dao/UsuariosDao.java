@@ -31,7 +31,7 @@ public class UsuariosDao implements IDao<Usuarios> {
                 registro.setNomeCompleto(rs.getString("nome_completo"));
                 registro.setNomeUsuario(rs.getString("nome_usuario"));
                 registro.setSenha(rs.getString("senha"));
-                registro.setAtivo(rs.getString("ativo"));
+                registro.setAtivo(rs.getBoolean("ativo"));
                 registro.setPapel(rs.getString("papel"));            
                 registros.add(registro);
             }
@@ -54,7 +54,7 @@ public class UsuariosDao implements IDao<Usuarios> {
                 registro.setNomeCompleto(rs.getString("nome_completo"));
                 registro.setNomeUsuario(rs.getString("nome_usuario"));
                 registro.setSenha(rs.getString("senha"));
-                registro.setAtivo(rs.getString("ativo"));
+                registro.setAtivo(rs.getBoolean("ativo"));
                 registro.setPapel(rs.getString("papel")); 
             }
         } catch (SQLException e) {
@@ -87,7 +87,7 @@ public class UsuariosDao implements IDao<Usuarios> {
                 registro.setNomeCompleto(rs.getString("nome_completo"));
                 registro.setNomeUsuario(rs.getString("nome_usuario"));
                 registro.setSenha(rs.getString("senha"));
-                registro.setAtivo(rs.getString("ativo"));
+                registro.setAtivo(rs.getBoolean("ativo"));
                 registro.setPapel(rs.getString("papel")); 
                 registros.add(registro);
             }
@@ -106,7 +106,7 @@ public class UsuariosDao implements IDao<Usuarios> {
             ps.setString(1, objeto.getNomeCompleto());
             ps.setString(2, objeto.getNomeUsuario());
             ps.setString(3, objeto.getSenha());
-            ps.setString(4, objeto.getAtivo());
+            ps.setBoolean(4, objeto.isAtivo());
             ps.setString(5, objeto.getPapel());
         } catch (SQLException e) {
             e.printStackTrace();
@@ -128,7 +128,7 @@ public class UsuariosDao implements IDao<Usuarios> {
             ps.setString(1, objeto.getNomeCompleto());
             ps.setString(2, objeto.getNomeUsuario());
             ps.setString(3, objeto.getSenha());
-            ps.setString(4, objeto.getAtivo());
+            ps.setBoolean(4, objeto.isAtivo());
             ps.setString(5, objeto.getPapel());
             registrosAfetados = ps.executeUpdate();
         } catch (SQLException e) {

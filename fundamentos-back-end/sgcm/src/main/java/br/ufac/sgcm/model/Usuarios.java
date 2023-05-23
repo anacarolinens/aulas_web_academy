@@ -5,45 +5,45 @@ public class Usuarios  {
     private String nomeCompleto;
     private String nomeUsuario;
     private String senha;
-    private String ativo;
+    private boolean ativo;
     //private PapelEnum papel;
     private String papel;
-
-    public Long getId(){
+    public Long getId() {
         return id;
     }
-    public void setId(Long Id){
-        this.id = Id;
+    public void setId(Long id) {
+        this.id = id;
     }
-    public String getNomeCompleto(){
+    public String getNomeCompleto() {
         return nomeCompleto;
     }
-    public void setNomeCompleto(String NomeCompleto){
-        this.nomeCompleto = NomeCompleto;
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
     }
-    public String getNomeUsuario(){
+    public String getNomeUsuario() {
         return nomeUsuario;
     }
-    public void setNomeUsuario(String NomeUsuario){
-        this.nomeUsuario = NomeUsuario;
+    public void setNomeUsuario(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
     }
-    public String getSenha(){
+    public String getSenha() {
         return senha;
     }
-    public void setSenha(String Senha){
-        this.senha = Senha;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
-    public String getAtivo(){
+    public Boolean isAtivo() {
         return ativo;
     }
-    public void setAtivo(String Ativo){
-        this.ativo = Ativo;
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
     }
     public String getPapel() {
         return papel;
-      }
-      
-      public void setPapel(String papel) {
+    }
+    public void setPapel(String papel) {
         this.papel = papel;
-      }
+    }
+
+
     }
