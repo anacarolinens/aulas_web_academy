@@ -10,6 +10,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 @Entity
 public class Usuario implements Serializable {
 
@@ -23,7 +28,9 @@ public class Usuario implements Serializable {
     @Column(nullable = false)
     private String nomeUsuario;
 
+    //Alterando as propriedades de senha
     @Column(nullable = false)
+    @JsonProperty(access = Access.WRITE_ONLY)
     private String senha;
 
     @Column(nullable = false)
@@ -54,9 +61,20 @@ public class Usuario implements Serializable {
     public String getSenha() {
         return senha;
     }
+    // public void setSenha(String senha) {
+    //     this.senha = senha;
+    // }
     public void setSenha(String senha) {
+        setSenha(senha,true);
+    }
+    public void setSenha(String senha, boolean encriptar) {
+        if (senha != null && !senha.isEmpty() && encriptar) {
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            senha = passwordEncoder.encode(senha);
+        }
         this.senha = senha;
     }
+
     public EPapel getPapel() {
         return papel;
     }

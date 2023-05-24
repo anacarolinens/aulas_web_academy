@@ -33,9 +33,16 @@ public class UsuarioService implements IService<Usuario> {
 
     @Override
     public Usuario save(Usuario objeto) {
+        if (objeto.getSenha() == null || objeto.getSenha().isEmpty()) {
+            Long id = objeto.getId();
+            Usuario usuario = repo.findById(id).orElse(null);
+            if (usuario != null) {
+                objeto.setSenha(usuario.getSenha(), false);
+            }
+        }
         return repo.save(objeto);
     }
-
+    
     @Override
     public void delete(Long id) {
         repo.deleteById(id);

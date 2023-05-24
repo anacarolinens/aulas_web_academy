@@ -22,14 +22,14 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2023-05-16T17:08:07.963Z",
-    "modified": "2023-05-23T01:25:28.677Z",
+    "modified": "2023-05-24T00:15:37.635Z",
     "headers": [],
     "params": [],
     "auth": {
       "type": "basic",
       "basic": {
-        "username": "paulo",
-        "password": "paulo"
+        "username": "teste",
+        "password": "teste2"
       }
     },
     "tests": []
@@ -39,11 +39,11 @@
     "colId": "history",
     "containerId": "",
     "name": "/atendimento/{id}",
-    "url": "http://localhost:9000/atendimento/2",
+    "url": "http://localhost:9000/atendimento/1",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-05-16T17:14:34.943Z",
-    "modified": "2023-05-16T17:14:34.943Z",
+    "modified": "2023-05-18T23:53:58.487Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -57,12 +57,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-05-16T17:26:17.714Z",
-    "modified": "2023-05-17T01:21:35.824Z",
+    "modified": "2023-05-16T17:26:17.714Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"data\": \"2023-05-30\",\n  \"hora\": \"14:00:00\",\n  \"profissional\": {\n    \"id\": 1\n  },\n  \"convenio\": {\n    \"id\": 1\n  },\n  \"paciente\": {\n    \"id\": 1\n  }\n}",
+      "raw": "{\n  \"data\": \"2023-05-29\",\n  \"hora\": \"14:00:00\",\n  \"profissional\": {\n    \"id\": 1\n  },\n  \"convenio\": {\n    \"id\": 1\n  },\n  \"paciente\": {\n    \"id\": 1\n  }\n}",
       "form": []
     },
     "tests": []
@@ -87,7 +87,7 @@
     "tests": []
   },
   {
-    "_id": "dae439e7-eea4-451a-a1ae-20de44746a62",
+    "_id": "ffe30ae4-5e57-4280-b62d-4476f706b7f1",
     "colId": "history",
     "containerId": "",
     "name": "/atendimento/status/{id}",
@@ -95,7 +95,7 @@
     "method": "PUT",
     "sortNum": 0,
     "created": "2023-05-16T17:36:44.312Z",
-    "modified": "2023-05-18T23:53:48.976Z",
+    "modified": "2023-05-18T23:54:14.117Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -123,9 +123,103 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2023-05-16T19:03:35.200Z",
-    "modified": "2023-05-19T00:49:08.477Z",
+    "modified": "2023-05-19T00:38:49.427Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "a7cfbb93-61f9-40ab-aa8e-697f3aee6337",
+    "colId": "history",
+    "containerId": "",
+    "name": "/config/usuario/",
+    "url": "https://localhost:9000/config/usuario/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-05-22T19:57:04.325Z",
+    "modified": "2023-05-23T23:23:50.236Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "admin",
+        "password": "admin"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "16590840-b194-4923-8642-8c75388427bd",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:9000/user_info/",
+    "url": "https://localhost:9000/user_info/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-05-22T21:11:17.865Z",
+    "modified": "2023-05-22T21:11:17.865Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "admin",
+        "password": "admin"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "90d4bd1b-db81-4821-a33b-3f9ae10c6c82",
+    "colId": "history",
+    "containerId": "",
+    "name": "/config/usuario/",
+    "url": "https://localhost:9000/config/usuario/",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-05-23T23:56:33.788Z",
+    "modified": "2023-05-23T23:56:33.788Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"nomeCompleto\": \"Usuario Teste\",\n  \"nomeUsuario\": \"teste\",\n  \"senha\": \"teste\",\n  \"papel\": \"ROLE_ADMIN\",\n  \"ativo\": true\n}",
+      "form": []
+    },
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "admin",
+        "password": "admin"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "776abc48-a1c6-4c6c-b9dc-7a957dfaf201",
+    "colId": "history",
+    "containerId": "",
+    "name": "/config/usuario/",
+    "url": "https://localhost:9000/config/usuario/",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-05-24T00:01:29.401Z",
+    "modified": "2023-05-24T00:15:22.672Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\": 4,\n  \"nomeCompleto\": \"Usuario Teste 2\",\n  \"nomeUsuario\": \"teste\",\n  \"senha\": \"\",\n  \"papel\": \"ROLE_ADMIN\",\n  \"ativo\": true\n}",
+      "form": []
+    },
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "admin",
+        "password": "admin"
+      }
+    },
     "tests": []
   }
 ]
