@@ -11,7 +11,7 @@ import { Atendimento } from 'src/app/model/atendimento';
 
 export class AtendimentoListComponent implements IList<Atendimento> {
 
-  registros: Atendimento[] = Array<Atendimento>();
+  registro: Atendimento[] = Array<Atendimento>();
 
   get(termoBusca?: string | undefined): void {
     throw new Error('Method not implemented.');

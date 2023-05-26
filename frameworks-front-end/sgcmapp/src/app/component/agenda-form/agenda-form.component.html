@@ -1,1 +1,36 @@
-<p>agenda-form works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Paciente</th>
+            <th>Profissional</th>
+            <th>Unidade</th>
+            <th>Convênio</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let item of registros">
+            <td class="fit">{{item.data}}</td>
+            <td class="fit">{{item.hora}}</td>
+            <td>{{item.paciente.nome}}</td>
+            <td>{{item.profissional.nome}}</td>
+            <td>{{item.profissional.unidade.nome}}</td>
+            <td>{{item.convenio.nome}}</td>
+            <td>
+                <a class="botao chegada" [ngClass]="{'inativo': item.status == 'AGENDADO'}">Chegada</a>
+                <a class="botao confirmacao" [ngClass]="{'inativo': item.status == 'CONFIRMADO'}">Confirmar</a>
+                <a class="botao" routerLink="/agenda/form" [queryParams]="{id: item.id}">Editar</a>
+                <a class="botao excluir" (click)="delete(item.id)">Cancelar</a>
+            </td>
+        </tr>
+        
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="7">Total de registros: {{registros.length}}</td>
+        </tr>
+    </tfoot>
+</table>
