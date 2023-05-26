@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IList } from '../i-list';
+import { Atendimento } from 'src/app/model/atendimento';
 
 @Component({
   selector: 'app-agenda-list',
@@ -6,6 +8,18 @@ import { Component } from '@angular/core';
   styles: [
   ]
 })
-export class AgendaListComponent {
+
+export class AgendaListComponent implements IList<Atendimento> {
+
+  registros: Atendimento[] = Array<Atendimento>();
+
+  get(termoBusca?: string | undefined): void {
+    throw new Error('Method not implemented.');
+  }
+
+  delete(id: number): void {
+    throw new Error('Method not implemented.');
+  }
+  
 
 }
