@@ -5,15 +5,14 @@
         <input type="hidden" name="id" [(ngModel)]="registro.id">
 
         <label for="profissional">Profissional</label>
-        <select name="profissional" required
-                [(ngModel)]="registro.profissional">
+        <select name="profissional" required[(ngModel)]="registro.profissional">
             <option value="">Selecione</option>
-            <option *ngFor="let item of profissionais"
-                    [ngValue]="item">{{item.nome}}</option>
+            <option *ngFor="let item of profissionais" [ngValue]="item">{{item.nome}}</option>
         </select>
 
         <label for="data">Data</label>
-        <input type="date" name="data" [(ngModel)]="registro.data" required>
+        <input type="date" name="data"
+               [(ngModel)]="registro.data" required>
 
         <label for="hora">Hora</label>
         <select name="hora" id="hora" required>
@@ -34,23 +33,15 @@
         </select>
 
         <label for="convenio">Convênio</label>
-        <select name="convenio" id="convenio" required>
+        <select name="convenio" id="convenio" required[(ngModel)]="registro.convenio">
             <option value="">Selecione</option>
-            <option value="1">Convênio A</option>
-            <option value="2">Convênio B</option>
-            <option value="3">Convênio C</option>
-            <option value="4">Convênio D</option>
-            <option value="5">Convênio E</option>
+            <option *ngFor="let item of convenios" [ngValue]="item">{{item.nome}}</option>
         </select>
 
         <label for="paciente">Paciente</label>
-        <select name="paciente" id="paciente" required>
+        <select name="paciente" id="paciente" required[(ngModel)]="registro.paciente">
             <option value="">Selecione</option>
-            <option value="1">Paciente A</option>
-            <option value="2">Paciente B</option>
-            <option value="3">Paciente C</option>
-            <option value="4">Paciente D</option>
-            <option value="5">Paciente E</option>
+            <option *ngFor="let item of pacientes" [ngValue]="item">{{item.nome}}</option>
         </select>
 
     </div>
