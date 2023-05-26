@@ -1,6 +1,6 @@
 export interface IList<T> {//definindo o tipo genérico
     //propriedade que registra os registros
-    registro: T[];
+    registros: T[];
 
     //definição de comportamento básico
     get(termoBusca?: string): void;

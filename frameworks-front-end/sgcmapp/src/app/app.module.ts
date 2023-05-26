@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AgendaListComponent } from './component/agenda-list/agenda-list.component';
 import { AtendimentoListComponent } from './component/atendimento-list/atendimento-list.component';
 import { AgendaFormComponent } from './component/agenda-form/agenda-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AgendaFormComponent } from './component/agenda-form/agenda-form.compone
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,7 +21,7 @@
             <td>{{item.convenio.nome}}</td>
             <td>
                 <a class="botao iniciar" [ngClass]="{'inativo': item.status == 'ATENDIMENTO'}">Iniciar</a>
-                <a class="botao finalizar" [ngClass]="{'inativo': item.status == 'CHEGADA'}">Finalizar</a>
+                <a class="botao finalizar excluir" [ngClass]="{'inativo': item.status == 'CHEGADA'}">Finalizar</a>
             </td>
         </tr>
         
