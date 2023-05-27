@@ -14,7 +14,7 @@ export class AgendaListComponent implements IList<Atendimento> {
   registros: Atendimento[] = Array<Atendimento>();
 
   get(termoBusca?: string | undefined): void {
-    throw new Error('Method not implemented.');
+    console.log(termoBusca);
   }
 
   delete(id: number): void {

@@ -140,6 +140,10 @@ div#comandos a {
     margin: auto 0;
 }
 
+app-atendimento-list div#comandos a.botao {
+    visibility: hidden;
+}
+
 /* Links e botões */
 
 a.botao,

@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'agenda', component: AgendaListComponent},
   { path: 'agenda/form', component: AgendaFormComponent},
   { path: 'atendimento', component: AtendimentoListComponent}
+  
 ];
 
 @NgModule({

@@ -7,13 +7,15 @@ import { AgendaListComponent } from './component/agenda-list/agenda-list.compone
 import { AtendimentoListComponent } from './component/atendimento-list/atendimento-list.component';
 import { AgendaFormComponent } from './component/agenda-form/agenda-form.component';
 import { FormsModule } from '@angular/forms';
+import { BarraComandosComponent } from './component/barra-comandos/barra-comandos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AgendaListComponent,
     AtendimentoListComponent,
-    AgendaFormComponent
+    AgendaFormComponent,
+    BarraComandosComponent
   ],
   imports: [
     BrowserModule,

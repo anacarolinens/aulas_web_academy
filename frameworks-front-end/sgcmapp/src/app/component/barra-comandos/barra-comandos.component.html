@@ -1,0 +1,8 @@
+<div id="comandos">
+    <a routerLink="./form" id="add" class="botao">Adicionar</a>
+    <div>
+            <label for="busca">Busca</label>
+            <input type="search" name="busca"  placeholder="Digite para buscar" id="busca" #termoBusca="ngModel" 
+            ngModel (ngModelChange)="busca(termoBusca.value)"> <!--Controlar quando o metodo muda-->
+    </div>
+</div>
