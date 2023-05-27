@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IList } from '../i-list';
 import { Atendimento } from 'src/app/model/atendimento';
+import { AtendimentoService } from 'src/app/service/atendimento.service';
 
 @Component({
   selector: 'app-atendimento-list',
@@ -10,6 +11,10 @@ import { Atendimento } from 'src/app/model/atendimento';
 })
 
 export class AtendimentoListComponent implements IList<Atendimento> {
+
+  constructor(private servico: AtendimentoService) {
+    
+  }
 
   registros: Atendimento[] = Array<Atendimento>();
 

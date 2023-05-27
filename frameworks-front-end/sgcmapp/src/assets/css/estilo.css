@@ -186,12 +186,43 @@ a.botao.excluir:hover {
     background-color: #811b1b;
 }
 
+a.botao.inativo {
+    display: none;
+}
+
+a.botao.confirmacao,
+a.botao.chegada,
+a.botao.iniciar,
+a.botao.finalizar {
+    width: 5.5em;
+}
+
+a.botao.confirmacao {
+    background-color: #7c7401;
+}
+
+a.botao.confirmacao:hover {
+    background-color: #554f02;
+}
+
+a.botao.chegada {
+    background-color: #01378a;
+}
+
+a.botao.chegada:hover {
+    background-color: #042b66;
+}
+
 /* Formulário */
 
 form {
     margin: auto;
     width: fit-content;
     text-align: right;
+}
+
+form.inativo {
+    display: none;
 }
 
 form div.grid {
@@ -221,6 +252,15 @@ form div.grid select {
 input:invalid,
 select:invalid {
     border:1px solid red;
+}
+
+form div.grid input[type="checkbox"] {
+    margin-left: 0;
+    width: 1.25em;
+}
+
+form div.grid input[type="date"] {
+    font-family: inherit;
 }
 
 @media screen and (max-width: 720px) {

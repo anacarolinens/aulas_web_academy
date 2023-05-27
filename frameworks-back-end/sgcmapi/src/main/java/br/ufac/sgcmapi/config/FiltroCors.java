@@ -14,7 +14,7 @@ public class FiltroCors {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.setAllowedOrigins(Arrays.asList("http://127.0.0.1:5500"));
+        corsConfig.setAllowedOrigins(Arrays.asList("http://127.0.0.1:5500", "https://localhost:4200"));
         corsConfig.setAllowedMethods(Arrays.asList("*"));
         corsConfig.setAllowedHeaders(Arrays.asList("*"));
         UrlBasedCorsConfigurationSource configSource = new UrlBasedCorsConfigurationSource();
