@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { IService } from './i-service';
 import { Paciente } from '../model/paciente';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +11,16 @@ import { Observable } from 'rxjs';
 export class PacienteService implements IService<Paciente> {
   
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  apiUrl: string = "";
+  apiUrl: string = environment.API_URL + '/paciente';
 
   get(termoBusca?: string | undefined): Observable<Paciente[]> {
-    throw new Error('Method not implemented.');
+    let url = this.apiUrl;
+    if (termoBusca) {
+      url += 'busca/' + termoBusca;
+    }
+    return this.http.get<Paciente[]>(url);
   }
 
   getById(id: number): Observable<Paciente> {

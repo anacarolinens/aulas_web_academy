@@ -19,10 +19,10 @@
             <td>{{item.paciente.nome}}</td>
             <td>{{item.profissional.nome}}</td>
             <td>{{item.profissional.unidade.nome}}</td>
-            <td>{{item.convenio.nome}}</td>
+            <td>{{item.convenio?.nome}}</td>
             <td>
-                <a class="botao iniciar" [ngClass]="{'inativo': item.status == 'ATENDIMENTO'}">Iniciar</a>
-                <a class="botao finalizar excluir" [ngClass]="{'inativo': item.status == 'CHEGADA'}">Finalizar</a>
+                <a class="botao iniciar" (click)="updateStatus(item.id)" [ngClass]="{'inativo': item.status == 'ATENDIMENTO'}">Iniciar</a>
+                <a class="botao finalizar excluir" (click)="updateStatus(item.id)" [ngClass]="{'inativo': item.status == 'CHEGADA'}">Finalizar</a>
             </td>
         </tr>
         

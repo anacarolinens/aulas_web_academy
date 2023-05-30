@@ -2,18 +2,24 @@ import { Injectable } from '@angular/core';
 import { IService } from './i-service';
 import { Profissional } from '../model/profissional';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfissionalService implements IService<Profissional> {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  apiUrl: string = "";
+  apiUrl: string = environment.API_URL + '/profissional/';
 
   get(termoBusca?: string | undefined): Observable<Profissional[]> {
-    throw new Error('Method not implemented.');
+    let url = this.apiUrl;
+    if (termoBusca) {
+      url += 'busca/' + termoBusca;
+    }
+    return this.http.get<Profissional[]>(url);
   }
 
   getById(id: number): Observable<Profissional> {

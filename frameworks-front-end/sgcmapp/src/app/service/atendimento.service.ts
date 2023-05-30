@@ -24,18 +24,22 @@ export class AtendimentoService implements IService<Atendimento> {
   }
 
   getById(id: number): Observable<Atendimento> {
-    throw new Error('Method not implemented.');
+    return this.http.get<Atendimento>(this.apiUrl + id);
   }
 
   insert(objeto: Atendimento): Observable<Atendimento> {
-    throw new Error('Method not implemented.');
+    return this.http.post<Atendimento>(this.apiUrl, objeto);
   }
 
   update(objeto: Atendimento): Observable<Atendimento> {
-    throw new Error('Method not implemented.');
+    return this.http.put<Atendimento>(this.apiUrl, objeto);
   }
   
   delete(id: number): Observable<void> {
-    throw new Error('Method not implemented.');
+    return this.http.delete<void>(this.apiUrl + id);
+  }
+
+  updateStatus(id: number): Observable<Atendimento> {
+    return this.http.put<Atendimento>(this.apiUrl+ 'status/' + id, null);
   }
 }

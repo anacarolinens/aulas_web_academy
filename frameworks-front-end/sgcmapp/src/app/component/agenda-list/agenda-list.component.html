@@ -1,4 +1,5 @@
 <app-barra-comandos (eventoBusca)="get($event)"></app-barra-comandos><!--Emitindo o evento-->
+
 <table>
     <thead>
         <tr>
@@ -13,22 +14,17 @@
     </thead>
     <tbody>
         <tr *ngFor="let item of registros">
-            <td class="fit">{{item.data}}</td>
-            <td class="fit">{{item.hora}}</td>
+            <td class="fit">{{item.data | date:'dd/MM/yyyy'}}</td>
+            <td class="fit">{{item.hora | slice:0:5}}</td>
             <td>{{item.paciente.nome}}</td>
             <td>{{item.profissional.nome}}</td>
             <td>{{item.profissional.unidade.nome}}</td>
-            <td>{{item.convenio.nome}}</td>
+            <td>{{item.convenio?.nome}}</td>
             <td>
-                <a class="botao chegada"
-                   [ngClass]="{'inativo': item.status == 'AGENDADO'}">Chegada</a>
-                <a class="botao confirmacao"
-                   [ngClass]="{'inativo': item.status == 'CONFIRMADO'}">Confirmar</a>
-                <a class="botao"
-                   routerLink="/agenda/form"
-                   [queryParams]="{id: item.id}">Editar</a>
-                <a class="botao excluir"
-                   (click)="delete(item.id)">Cancelar</a>
+                <a class="botao chegada" (click)="updateStatus(item.id)" [ngClass]="{'inativo': item.status == 'AGENDADO'}">Chegada</a>
+                <a class="botao confirmacao" (click)="updateStatus(item.id)" [ngClass]="{'inativo': item.status == 'CONFIRMADO'}">Confirmar</a>
+                <a class="botao" routerLink="/agenda/form"[queryParams]="{id: item.id}">Editar</a>
+                <a class="botao excluir" (click)="delete(item.id)">Cancelar</a>
             </td>
         </tr>
     </tbody>

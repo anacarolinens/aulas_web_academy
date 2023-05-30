@@ -36,7 +36,7 @@ public class Seguranca {
         return authProvider;
     }
 
-    //Obejto que modifica as propriedades
+    //Objeto que modifica as propriedades
     @Bean
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 

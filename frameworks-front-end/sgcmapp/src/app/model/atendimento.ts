@@ -8,6 +8,6 @@ export interface Atendimento {
     hora: string;
     status: string;
     profissional: Profissional;
-    convenio: Convenio;
+    convenio: Convenio | undefined;
     paciente: Paciente;
 }

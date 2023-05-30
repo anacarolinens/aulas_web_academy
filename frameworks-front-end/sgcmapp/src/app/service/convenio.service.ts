@@ -2,18 +2,24 @@ import { Injectable } from '@angular/core';
 import { IService } from './i-service';
 import { Convenio } from '../model/convenio';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConvenioService implements IService<Convenio> {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  apiUrl: string = "";
+  apiUrl: string = environment.API_URL + '/convenio/';
 
   get(termoBusca?: string | undefined): Observable<Convenio[]> {
-    throw new Error('Method not implemented.');
+    let url = this.apiUrl;
+    if (termoBusca) {
+      url += 'busca/' + termoBusca;
+    }
+    return this.http.get<Convenio[]>(url);
   }
 
   getById(id: number): Observable<Convenio> {

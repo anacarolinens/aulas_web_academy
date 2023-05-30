@@ -36,7 +36,20 @@ export class AgendaListComponent implements IList<Atendimento>, OnInit{
   }
 
   delete(id: number): void {
-    throw new Error('Method not implemented.');
+    if (confirm('Deseja cancelar o agendamento?')) {
+      this.servico.delete(id).subscribe({
+        //executa no final quando o método for completado
+        complete: () => this.get()
+      });
+    }
+  }
+
+  updateStatus(id: number): void {
+    if (confirm('Confirma a alteração no status do agendamento?')) {
+      this.servico.updateStatus(id).subscribe({
+        complete:() => this.get ()
+      });
+    }
   }
   
 

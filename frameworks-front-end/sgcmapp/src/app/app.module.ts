@@ -5,8 +5,8 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AgendaListComponent } from './component/agenda-list/agenda-list.component';
-import { AtendimentoListComponent } from './component/atendimento-list/atendimento-list.component';
 import { AgendaFormComponent } from './component/agenda-form/agenda-form.component';
+import { AtendimentoListComponent } from './component/atendimento-list/atendimento-list.component';
 import { FormsModule } from '@angular/forms';
 import { BarraComandosComponent } from './component/barra-comandos/barra-comandos.component';
 
@@ -14,8 +14,8 @@ import { BarraComandosComponent } from './component/barra-comandos/barra-comando
   declarations: [
     AppComponent,
     AgendaListComponent,
-    AtendimentoListComponent,
     AgendaFormComponent,
+    AtendimentoListComponent,
     BarraComandosComponent
   ],
   imports: [
