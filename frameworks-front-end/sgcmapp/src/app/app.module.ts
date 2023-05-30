@@ -15,8 +15,8 @@ import { BarraComandosComponent } from './component/barra-comandos/barra-comando
     AppComponent,
     AgendaListComponent,
     AgendaFormComponent,
-    AtendimentoListComponent,
-    BarraComandosComponent
+    BarraComandosComponent, 
+    AtendimentoListComponent
   ],
   imports: [
     BrowserModule,

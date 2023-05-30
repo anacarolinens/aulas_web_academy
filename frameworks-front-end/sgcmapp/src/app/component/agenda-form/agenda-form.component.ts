@@ -74,6 +74,6 @@ export class AgendaFormComponent implements IForm<Atendimento>, OnInit{
       }
     });
 
-  };
+  }
 
 }

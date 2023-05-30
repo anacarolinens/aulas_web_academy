@@ -12,7 +12,7 @@ import { AtendimentoService } from 'src/app/service/atendimento.service';
 
 //Todo objeto no angular tem um tempo de vida
 
-export class AgendaListComponent implements IList<Atendimento>, OnInit{
+export class AtendimentoListComponent implements IList<Atendimento>, OnInit{
 
   constructor(private servico: AtendimentoService) {}
   delete(id: number): void {

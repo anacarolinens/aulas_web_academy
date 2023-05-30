@@ -23,7 +23,7 @@
             <td>
                 <a class="botao chegada" (click)="updateStatus(item.id)" [ngClass]="{'inativo': item.status == 'AGENDADO'}">Chegada</a>
                 <a class="botao confirmacao" (click)="updateStatus(item.id)" [ngClass]="{'inativo': item.status == 'CONFIRMADO'}">Confirmar</a>
-                <a class="botao" routerLink="/agenda/form"[queryParams]="{id: item.id}">Editar</a>
+                <a class="botao" routerLink="/agenda/form" [queryParams]="{id: item.id}">Editar</a>
                 <a class="botao excluir" (click)="delete(item.id)">Cancelar</a>
             </td>
         </tr>

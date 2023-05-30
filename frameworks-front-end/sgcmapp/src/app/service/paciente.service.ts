@@ -13,7 +13,7 @@ export class PacienteService implements IService<Paciente> {
 
   constructor(private http: HttpClient) { }
 
-  apiUrl: string = environment.API_URL + '/paciente';
+  apiUrl: string = environment.API_URL + '/paciente/';
 
   get(termoBusca?: string | undefined): Observable<Paciente[]> {
     let url = this.apiUrl;

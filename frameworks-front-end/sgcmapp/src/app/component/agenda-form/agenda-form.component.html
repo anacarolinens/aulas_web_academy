@@ -14,7 +14,7 @@
         <input type="date" name="data" [(ngModel)]="registro.data" required>
 
         <label for="hora">Hora</label>
-        <select name="hora" id="hora" required>
+        <select name="hora" [(ngModel)]="registro.hora" required>
             <option value="">Selecione</option>
             <option value="14:00">14:00</option>
             <option value="14:30">14:30</option>
@@ -32,13 +32,13 @@
         </select>
 
         <label for="convenio">Convênio</label>
-        <select name="convenio" id="convenio" required [(ngModel)]="registro.convenio">
+        <select name="convenio" required [(ngModel)]="registro.convenio">
             <option value="">Selecione</option>
             <option *ngFor="let item of convenios" [ngValue]="item">{{item.nome}}</option>
         </select>
 
         <label for="paciente">Paciente</label>
-        <select name="paciente" id="paciente" required [(ngModel)]="registro.paciente">
+        <select name="paciente" required [(ngModel)]="registro.paciente">
             <option value="">Selecione</option>
             <option *ngFor="let item of pacientes" [ngValue]="item">{{item.nome}}</option>
         </select>
