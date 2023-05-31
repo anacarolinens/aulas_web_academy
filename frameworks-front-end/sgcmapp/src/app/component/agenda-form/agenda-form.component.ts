@@ -9,7 +9,10 @@ import { AtendimentoService } from 'src/app/service/atendimento.service';
 import { ConvenioService } from 'src/app/service/convenio.service';
 import { PacienteService } from 'src/app/service/paciente.service';
 import { ProfissionalService } from 'src/app/service/profissional.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Utils } from 'src/app/utils/utils';
+import { AlertaService } from 'src/app/service/alerta.service';
+import { ETipoAlerta } from 'src/app/model/e-tipo-alerta';
 
 @Component({
   selector: 'app-agenda-form',
@@ -24,7 +27,9 @@ export class AgendaFormComponent implements IForm<Atendimento>, OnInit{
     private servicoConvenio: ConvenioService,
     private servicoPaciente: PacienteService,
     private servicoProfissional: ProfissionalService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
+    private servicoAlerta: AlertaService
     ){}
   ngOnInit(): void {
     
@@ -60,12 +65,37 @@ export class AgendaFormComponent implements IForm<Atendimento>, OnInit{
 
   
 
-  registro: Atendimento = <Atendimento>{};
+  registro: Atendimento = <Atendimento>{}; //declarando uma variável do tipo atendimento que recebe um valor
   profissionais: Profissional[] = Array<Profissional>();
   convenios: Convenio[] = Array<Convenio>();
   pacientes: Paciente[] = Array<Paciente>();
+  compareById = Utils.compareById; // apenas recebendo um valor
 
   submit(form: NgForm): void {
+
+    if (this.registro.id) {
+      this.servico.update(this.registro).subscribe ({
+        complete: () => {
+          this.router.navigate(['/agenda']);
+          this.servicoAlerta.enviarAlerta({
+            tipo: ETipoAlerta.SUCESSO,
+            mensagem: "Operação realizada com sucesso!"
+          });
+
+        }
+      });
+    } else {
+      this.servico.update(this.registro).subscribe ({
+        complete: () => {
+          form.resetForm();
+          this.servicoAlerta.enviarAlerta({
+            tipo: ETipoAlerta.SUCESSO,
+            mensagem: "Operação realizada com sucesso!"
+          });
+        }
+      });
+    }
+
 
     this.servico.insert(this.registro).subscribe({
       //garantindo que o metodo seja chamado

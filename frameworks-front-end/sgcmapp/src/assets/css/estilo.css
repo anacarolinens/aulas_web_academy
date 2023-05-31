@@ -349,3 +349,36 @@ table tbody td:last-child, table tbody td.fit {
     }
 
 }
+
+/* Alerta */
+
+div.alerta {
+    border:  1px solid;
+    padding: 1em;
+    max-width: 400px;
+    word-wrap: break-word;
+    margin: 1em auto;
+}
+
+div.alerta span#fechar {
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+div.alerta.erro {
+    background-color: #ff9f9f;
+    color: #c42626;
+    border-color: #c42626;
+}
+
+div.alerta.sucesso {
+    background-color: #99ff9d;
+    color: #1e5e20;
+    border-color: #1e5e20;
+}
+
+div.inativo {
+    display: none;
+}

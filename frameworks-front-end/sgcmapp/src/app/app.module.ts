@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +9,8 @@ import { AgendaFormComponent } from './component/agenda-form/agenda-form.compone
 import { AtendimentoListComponent } from './component/atendimento-list/atendimento-list.component';
 import { FormsModule } from '@angular/forms';
 import { BarraComandosComponent } from './component/barra-comandos/barra-comandos.component';
+import { AlertaComponent } from './component/alerta/alerta.component';
+import { ErroInterceptor } from './interceptor/erro.interceptor';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,7 @@ import { BarraComandosComponent } from './component/barra-comandos/barra-comando
     AgendaListComponent,
     AgendaFormComponent,
     BarraComandosComponent, 
-    AtendimentoListComponent
+    AtendimentoListComponent, AlertaComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,11 @@ import { BarraComandosComponent } from './component/barra-comandos/barra-comando
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: ErroInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
