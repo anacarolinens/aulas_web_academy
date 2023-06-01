@@ -12,6 +12,8 @@ import { BarraComandosComponent } from './component/barra-comandos/barra-comando
 import { AlertaComponent } from './component/alerta/alerta.component';
 import { ErroInterceptor } from './interceptor/erro.interceptor';
 import { LoginComponent } from './component/login/login.component';
+import { RequisicaoInterceptor } from './interceptor/requisicao.interceptor';
+import { UsuarioComponent } from './component/usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,7 @@ import { LoginComponent } from './component/login/login.component';
     AgendaListComponent,
     AgendaFormComponent,
     BarraComandosComponent, 
-    AtendimentoListComponent, AlertaComponent, LoginComponent
+    AtendimentoListComponent, AlertaComponent, LoginComponent, UsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,9 @@ import { LoginComponent } from './component/login/login.component';
   providers: [
     {
       provide: HTTP_INTERCEPTORS, useClass: ErroInterceptor, multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS, useClass: RequisicaoInterceptor, multi: true
     }
   ],
   bootstrap: [AppComponent]

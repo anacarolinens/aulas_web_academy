@@ -43,20 +43,21 @@ public class Seguranca {
         http.httpBasic(); //habilitando a forma de autenticação do tipo http basic acccess
         http.cors();
         //Para qualquer requisição pode permitir
-        http.authorizeHttpRequests().anyRequest().permitAll();
+        // http.authorizeHttpRequests().anyRequest().permitAll();
+        
         //Dizendo como fazer a autendicação - recuperar o usuario e senha
-        // http.authenticationProvider(authProvider());
+        http.authenticationProvider(authProvider());
 
-        // //Determinando quem tem acesso a endpoint só quem tem acesso admin
-        // http.authorizeHttpRequests().antMatchers("/config/**").hasRole("ADMIN");
+        //Determinando quem tem acesso a endpoint só quem tem acesso admin
+        http.authorizeHttpRequests().antMatchers("/config/**").hasRole("ADMIN");
 
-        // //Dizendo quais as permissões do usuario comum - exigir autenticação para qualquer usuario
-        // http.authorizeHttpRequests().anyRequest().authenticated();
+        //Dizendo quais as permissões do usuario comum - exigir autenticação para qualquer usuario
+        http.authorizeHttpRequests().anyRequest().authenticated();
 
-        // //Configuração do logout
-        // http.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
-        // //Depois que der certo retorna um ok
-        // http.logout().logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler(HttpStatus.OK));
+        //Configuração do logout
+        http.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+        //Depois que der certo retorna um ok
+        http.logout().logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler(HttpStatus.OK));
 
         //Desabilita crsf
         http.csrf().disable();

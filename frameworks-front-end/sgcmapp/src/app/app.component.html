@@ -3,35 +3,35 @@
       <img src="/assets/imagens/logo.png" alt="Logo SGCM">
       <span id="titulo">{{title}}</span> <!-- propriedade que busca o titulo no arquivo que controla o comportamento do componente-->
   </div>
-  <div id="usuarioInfo">
-      <span>Usuário: Administrador (admin)</span>
-      <span>Papel: ADMIN</span>
-      <a href="javascript:void(0)" class="botao">Logout</a>
+  <div id="usuarioInfo" [hidden]="!isAutenticado()" >
+      <span>Usuário: {{getUsuario().nomeCompleto}} ({{getUsuario().nomeUsuario}})</span>
+      <span>Papel: {{getUsuario().papel}}</span>
+      <a href="javascript:void(0)" class="botao" (click)="logout()">Logout</a>
   </div>
 </header>
-<nav>
+<nav *ngIf="isAutenticado()"> <!--Modifica a estrutura do elemento, ou o elemento vai ser renderizado ou não-->
   <ul>
       <li><a routerLink="/agenda">Agenda</a></li>
       <li><a routerLink="/atendimento">Atendimento</a></li>
       <li><a routerLink="/pacientes">Pacientes</a></li>
       <li><a routerLink="/profissionais">Profissionais</a></li>
       <li><a routerLink="/convenios">Convênios</a></li>
-      <li id="dropdown">
+      <li id="dropdown" *ngIf="isAdmin()">
           <a href="javascript:void(0)">
               Configurações
               <span>&#9660;</span>
           </a>
           <div id="dropdown_menu">
-              <a routerLink="/unidades">Unidades</a>
-              <a routerLink="/especialidades">Especialidades</a>
-              <a routerLink="/usuarios">Usuários</a>
+              <a routerLink="/config/unidades">Unidades</a>
+              <a routerLink="/config/especialidades">Especialidades</a>
+              <a routerLink="/config/usuarios">Usuários</a>
           </div>
       </li>
   </ul>
 </nav>
 <main>
   <app-alerta></app-alerta>
-  <!-- Exibe o conteudo do componente de acorodo com a rota-->
+  <!-- Exibe o conteudo do componente de acordo com a rota-->
   <router-outlet></router-outlet>
 </main>
 <footer>

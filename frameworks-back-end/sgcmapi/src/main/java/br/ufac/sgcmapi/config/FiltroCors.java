@@ -14,6 +14,7 @@ public class FiltroCors {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfig = new CorsConfiguration();
+        corsConfig.setAllowCredentials(true); //permite que as credenciais sejam enviadas nas requisições
         corsConfig.setAllowedOrigins(Arrays.asList("http://127.0.0.1:5500", "https://localhost:4200"));
         corsConfig.setAllowedMethods(Arrays.asList("*"));
         corsConfig.setAllowedHeaders(Arrays.asList("*"));
