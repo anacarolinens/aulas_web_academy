@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { BarraComandosComponent } from './component/barra-comandos/barra-comandos.component';
 import { AlertaComponent } from './component/alerta/alerta.component';
 import { ErroInterceptor } from './interceptor/erro.interceptor';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ErroInterceptor } from './interceptor/erro.interceptor';
     AgendaListComponent,
     AgendaFormComponent,
     BarraComandosComponent, 
-    AtendimentoListComponent, AlertaComponent
+    AtendimentoListComponent, AlertaComponent, LoginComponent
   ],
   imports: [
     BrowserModule,

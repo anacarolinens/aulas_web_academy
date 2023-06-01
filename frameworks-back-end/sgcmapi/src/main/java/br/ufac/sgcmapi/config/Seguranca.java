@@ -40,7 +40,7 @@ public class Seguranca {
     @Bean
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
-        http.httpBasic();
+        http.httpBasic(); //habilitando a forma de autenticação do tipo http basic acccess
         http.cors();
         //Para qualquer requisição pode permitir
         http.authorizeHttpRequests().anyRequest().permitAll();
