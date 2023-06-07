@@ -1,5 +1,6 @@
-const { test } = require('node:test')
+//const { test } = require('node:test')
 const Calcularsoma = require('./soma')
+//import { soma } from './soma';
 
 test ('Deve retornar 12 quando os numeros forem 5 e 7', () => {
     //Aerofunction

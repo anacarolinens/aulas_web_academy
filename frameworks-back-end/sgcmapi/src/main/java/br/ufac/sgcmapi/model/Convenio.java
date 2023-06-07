@@ -35,7 +35,7 @@ public class Convenio implements Serializable {
     private String telefone;
   
     @Column(nullable = false)
-    private boolean ativo = true;
+    private boolean ativo = false;
     
     public Long getId() {
         return id;

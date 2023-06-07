@@ -7,10 +7,10 @@
 
 //Transformando o código acima em objeto
 function soma(paramentro){
-    //if ((typeof(paramentro.a)=="number") && (typeof(paramentro.b)=="number"))
+    if ((typeof(paramentro.a)=="number") && (typeof(paramentro.b)=="number"))
         return (paramentro.a + paramentro.b)
-    //else
-    //    return ("Não dá pra somar...")
+    else
+        return ("Não dá pra somar...")
     
 }
 
