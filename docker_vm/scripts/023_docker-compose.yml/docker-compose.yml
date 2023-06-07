@@ -1,0 +1,9 @@
+version: "3"
+services:
+  wildfly:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: app-test:1.0
+    ports:
+      - "8080:8080"

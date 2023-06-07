@@ -1,0 +1,9 @@
+version: "3"
+services:
+  apache:
+    build:
+      context: ../022a_Dockerfile/
+      dockerfile: Dockerfile
+    image: app-test:1.0
+    ports:
+      - "80:80"
